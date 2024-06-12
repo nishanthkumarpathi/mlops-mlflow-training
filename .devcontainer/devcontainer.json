@@ -1,0 +1,30 @@
+{
+    "name": "mlops-mlflow-training",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "jupyter",
+    "forwardPorts": [
+        "8888:8888",
+        "5000:5000",
+        "8900:8900",
+        "5432:5432"
+    ],
+
+    "mounts": [
+        "source=${localWorkspaceFolder}/notebook,target=/home/jovyan/work,type=bind,consistency=cached"
+    ],
+
+    "workspaceFolder": "/home/jovyan/work",
+
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-toolsai.jupyter",
+                "ms-toolsai.jupyter-notebook-renderers",
+                "esben.vsc-python-indent-rainbow",
+                "todo-md.todo-md"
+            ]
+        }
+    }
+
+}
